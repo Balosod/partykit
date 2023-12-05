@@ -66,7 +66,7 @@ export default function PollMaker() {
               }}
             />
             <Button theme="light" onClick={addNewOption}>
-              Add
+              Add me
             </Button>
           </li>
         )}

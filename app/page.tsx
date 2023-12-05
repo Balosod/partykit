@@ -20,7 +20,7 @@ export default function Home() {
         options.push(value.toString());
       }
     }
-
+    console.log("............formData..........", formData);
     const id = randomId();
     const poll: Poll = {
       title,
@@ -28,6 +28,16 @@ export default function Home() {
     };
 
     // 🎈 TODO: send a POST request to a PartyKit room
+    const data = await fetch(`${PARTYKIT_URL}/party/${id}`, {
+      method: "POST",
+      body: JSON.stringify(poll),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("data", data);
+    const res = await data.json();
+    console.log("res", res);
 
     redirect(`/${id}`);
   }

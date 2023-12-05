@@ -51,7 +51,7 @@ export default function PollOptions({
                   {option}
                 </span>
               </button>
-              
+
               {vote === null ? null : <span>{votes[i] ?? 0}</span>}
             </div>
           </div>
